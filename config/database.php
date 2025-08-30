@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'sqlite'),
+    'default' => env('DB_CONNECTION', 'mongodb'),
 
     /*
     |--------------------------------------------------------------------------
@@ -30,7 +30,15 @@ return [
     */
 
     'connections' => [
+        'mongodb' => [
 
+        'driver' => 'mongodb',
+
+        'dsn' => env('MONGODB_URI', 'mongodb://localhost:27017'),
+
+        'database' => env('MONGODB_DATABASE', 'modulo_estoque'),
+
+        ],
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DB_URL'),
